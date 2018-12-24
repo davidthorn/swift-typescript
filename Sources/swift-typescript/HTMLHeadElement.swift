@@ -2,16 +2,20 @@ public class HTMLHeadElement: HTMLElement {
 
     public var title: HTMLTextNodeElement
 
+    public var baseTag: HTMLTag
+
     public var scriptTags: [HTMLScriptTag]
 
     public var linkTags: [HTMLLinkTag]
 
     public init() {
+        self.baseTag = HTMLTag(name: "base")
         self.scriptTags = []
         self.linkTags = []
         self.title = HTMLTextNodeElement("" , name: "title" , id: "html-head-title")
         super.init(name: "head", id: "head")
-    }
+        self.baseTag.add(attribute: (key: "href" , value: "."))
+    }   
 
     public override func render(_ textNode: String? = nil) -> String {
 
@@ -28,7 +32,7 @@ public class HTMLHeadElement: HTMLElement {
         }) 
 
         let innerText = textNode ?? "" 
-        return super.render("\(scripts)\(links)\(innerText)")
+        return super.render("\(baseTag.render())\(scripts)\(links)\(innerText)")
 
     }
 

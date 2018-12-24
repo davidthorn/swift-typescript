@@ -3,7 +3,7 @@ import Foundation
 document.head { headElement in
     
     headElement.scripts(src: [
-        "./app.js"
+        "./events.js"
     ])
 
     headElement.links(href: [
@@ -20,12 +20,15 @@ document.body { p in
             pn.click { 
                 guard let title = document.getElementById("main-title") as? HTMLH1Element else { return }
                 title.text = "Hi there"
+                pn.text = "I am changed too"
+                
             }
         }
     }
 }
 
-handleClickEvents()    
-
+let prerender = document.render()
+handleClickEvents() 
 let result = document.render()
-_ = FileManager.default.createFile(atPath: "./index.html" , contents: result.data(using: .utf8))
+
+_ = FileManager.default.createFile(atPath: "./index.html" , contents: prerender.data(using: .utf8))
