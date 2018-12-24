@@ -1,3 +1,11 @@
+import Foundation
+
+public typealias EventName = String
+
+public typealias DOMClickEventHandler = () -> Void
+
+public typealias DOMEventHandler = (id: String , eventName: EventName , target: HTMLElement , handler: () -> Void )
+
 public class HTMLElement {
 
     public var name: String
@@ -8,11 +16,16 @@ public class HTMLElement {
 
     public var nodes: [HTMLElement]
 
+    public var parent: HTMLElement?
+
+    internal var eventHandlers: [String:[DOMEventHandler]]
+
     public init(name: String , id: String? = nil) {
         self.name = name
-        self.id = id
+        self.id = id ?? UUID().uuidString
         self.classNames = []
         self.nodes = []
+        self.eventHandlers = [:]
     }
 
     public func render(_ textNode: String? = nil) -> String {
@@ -42,6 +55,8 @@ public class HTMLElement {
     }
 
     public func add(node: HTMLElement) {
+        node.parent = self
+        document.add(node: node)
         self.nodes.append(node)
     }
 

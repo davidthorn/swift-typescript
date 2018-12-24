@@ -5,26 +5,21 @@ let _bodyElement = body { p in
 
     p.child("wrapper") { e in
 
-        e.h1("Main Title")
-        e.p("my long text which I want to use")
-       
+        e.h1("Main Title" , "main-title")
+        e.p("my long text which I want to use") { pn in
+            pn.click { 
+                guard let title = document.getElementById("main-title") as? HTMLH1Element else { return }
+                title.text = "Hi there"
+            }
+        }
     }
 
 }
 
-// let myElement = div("my-element") { ele in
-    
-//     ele.add(classNames: ["active" , "dog"])
-
-//     ele.child("my-inner" ) { cn in
-        
-//         cn.add(classNames: ["fruit"])
-
-//     }
-
-//     return ele
-// }
-
+document.eventHandlers["click"]?.forEach { event in
+    event.handler()
+}
 
 let result = _bodyElement.render()
+
 print(result)
