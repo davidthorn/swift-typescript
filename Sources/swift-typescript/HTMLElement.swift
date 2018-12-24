@@ -12,7 +12,16 @@ public class HTMLElement {
         self.classNames = []
     }
 
-    public func render() {
+    public func render() -> String {
+
+        var classNamesRenders = self.classNames.joined(separator: " ")
+
+        var tag = """
+            <\(name)></\(name)>
+        """
+
+
+
         print("rendering \(self.name) element")
 
         if let i = id {
@@ -22,6 +31,8 @@ public class HTMLElement {
         self.classNames.forEach { className in
             print("element has className of \(className)")
         }
+
+        return tag
     }
 
     public func add(className: String) {

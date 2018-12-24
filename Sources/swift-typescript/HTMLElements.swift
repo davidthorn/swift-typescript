@@ -4,9 +4,11 @@ public class HTMLDivElement: HTMLElement {
         super.init(name: "div" , id: id)
     }
 
-    public override func render() {
-        super.render()
+    public override func render() -> String {
+        let result = super.render()
         print("have rendered the div element")
+
+        return result
     }
 
 }
