@@ -16,6 +16,12 @@ public func scriptTag( _ src: String , _ n: (_ node: HTMLScriptTag ) -> HTMLScri
     return tag
 }
 
+public func linkTag( _ href: String , _ rel: String , _ n: (_ node: HTMLLinkTag ) -> HTMLLinkTag) -> HTMLLinkTag {
+    let tag = n(HTMLLinkTag(href: href , rel: rel))
+    document.headElement.add(link: tag)
+    return tag
+}
+
 public func div( _ id: String? = nil , _ n: (_ node: HTMLDivElement ) -> HTMLDivElement) -> HTMLDivElement {
     return n(HTMLDivElement(id: id))
 }

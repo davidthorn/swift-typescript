@@ -4,8 +4,11 @@ public class HTMLHeadElement: HTMLElement {
 
     public var scriptTags: [HTMLScriptTag]
 
+    public var linkTags: [HTMLLinkTag]
+
     public init() {
         self.scriptTags = []
+        self.linkTags = []
         self.title = HTMLTextNodeElement("" , name: "title" , id: "html-head-title")
         super.init(name: "head", id: "head")
     }
@@ -18,8 +21,14 @@ public class HTMLHeadElement: HTMLElement {
             return mod
         }) 
 
+        let links = self.linkTags.reduce("" , { (prev, node) -> String in
+            var mod = prev
+            mod.append("\n\t\(node.render())\n")
+            return mod
+        }) 
+
         let innerText = textNode ?? "" 
-        return super.render("\(scripts)\(innerText)")
+        return super.render("\(scripts)\(links)\(innerText)")
 
     }
 
@@ -31,9 +40,25 @@ public class HTMLHeadElement: HTMLElement {
         scripts.forEach{ self.add(script: $0) }
     }
 
+     public func add(link: HTMLLinkTag) {
+        self.linkTags.append(link)
+    }
+
     public func script(src: String, n: ((_ childNode: HTMLScriptTag) -> Void)? = nil ) {
         let child_node = scriptTag(src) { $0 } // create new 
         n?(child_node)
+    }
+
+    public func link(href: String, rel: String = "stylesheet", n: ((_ childNode: HTMLLinkTag) -> Void)? = nil ) {
+        let child_node = linkTag(href, rel) { $0 } // create new 
+        n?(child_node)
+    }
+
+    public func links(href: [String], n: ((_ childNode: HTMLLinkTag) -> Void)? = nil ) {
+        href.forEach { s in
+            let child_node = linkTag(s , "stylesheet") { $0 } // create new 
+            n?(child_node)
+        }
     }
 
     public func scripts(src: [String], n: ((_ childNode: HTMLScriptTag) -> Void)? = nil ) {

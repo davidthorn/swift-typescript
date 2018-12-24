@@ -1,7 +1,15 @@
 
-document.headElement.scripts(src: [
-    "./app.js"
-])
+document.head { headElement in
+    
+    headElement.scripts(src: [
+        "./app.js"
+    ])
+
+    headElement.links(href: [
+        "./layout.css"
+    ])
+}
+
 
 document.body { p in
     
