@@ -6,13 +6,7 @@ public typealias DOMClickEventHandler = () -> Void
 
 public typealias DOMEventHandler = (id: String , eventName: EventName , target: HTMLElement , handler: () -> Void )
 
-public class HTMLElement {
-
-    public var name: String
-
-    public var id: String?
-
-    public var classNames: [String]
+public class HTMLElement: HTMLTag {
 
     public var nodes: [HTMLElement]
 
@@ -20,19 +14,13 @@ public class HTMLElement {
 
     internal var eventHandlers: [String:[DOMEventHandler]]
 
-    public init(name: String , id: String? = nil) {
-        self.name = name
-        self.id = id ?? UUID().uuidString
-        self.classNames = []
+    public override init(name: String , id: String? = nil) {
         self.nodes = []
         self.eventHandlers = [:]
+        super.init(name: name, id: id)
     }
 
-    public func render(_ textNode: String? = nil) -> String {
-
-        let classNamesRendered = self.classNames.joined(separator: " ")
-
-        let classTag = classNamesRendered.count > 0 ? " class=\"\(classNamesRendered)\"" : ""
+    public override func render(_ textNode: String? = nil) -> String {
 
         let childNodes = self.nodes.reduce("" , { (prev, node) -> String in
             var mod = prev
@@ -40,18 +28,8 @@ public class HTMLElement {
              return mod
         }) 
 
-        let idAttr = id == nil ? "" : " id=\"\(id!)\""
         let innerText = textNode ?? "" 
-        return "<\(name)\(idAttr)\(classTag)>\(innerText)\(childNodes)</\(name)>"
-    }
-
-    public func add(className: String) {
-        guard !self.classNames.contains(className) else { return }
-        self.classNames.append(className)
-    }
-
-    public func add(classNames: [String]) {
-        classNames.forEach { self.add(className: $0) }
+        return super.render("\(innerText)\(childNodes)")
     }
 
     public func add(node: HTMLElement) {
