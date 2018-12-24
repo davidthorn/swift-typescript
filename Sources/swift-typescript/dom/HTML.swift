@@ -1,13 +1,19 @@
 public func body( _ n: (_ node: HTMLBodyElement ) -> Void) -> HTMLBodyElement {
-    let body_element = document.body
+    let body_element = document.bodyElement
     n(body_element)
     return body_element
 }
 
 public func head( _ n: (_ node: HTMLHeadElement ) -> Void) -> HTMLHeadElement {
-    let head_element = document.head
+    let head_element = document.headElement
     n(head_element)
     return head_element
+}
+
+public func scriptTag( _ src: String , _ n: (_ node: HTMLScriptTag ) -> HTMLScriptTag) -> HTMLScriptTag {
+    let tag = n(HTMLScriptTag(src: src))
+    document.headElement.add(script: tag)
+    return tag
 }
 
 public func div( _ id: String? = nil , _ n: (_ node: HTMLDivElement ) -> HTMLDivElement) -> HTMLDivElement {

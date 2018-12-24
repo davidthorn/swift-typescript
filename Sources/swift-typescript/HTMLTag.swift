@@ -8,10 +8,13 @@ public class HTMLTag {
 
     public var classNames: [String]
 
+    public var attributes: [(key: String , value: String)]
+
     public init(name: String , id: String? = nil) {
         self.name = name
         self.id = id ?? UUID().uuidString
         self.classNames = []
+        self.attributes = []
     }
 
     public func render(_ textNode: String? = nil) -> String {
@@ -20,9 +23,15 @@ public class HTMLTag {
 
         let classTag = classNamesRendered.count > 0 ? " class=\"\(classNamesRendered)\"" : ""
 
+        let attrs = self.attributes.reduce("" , { (prev, attr) -> String in
+             var mod = prev
+             mod.append(" \(attr.key)=\"\(attr.value)\"")
+             return mod
+        }) 
+
         let idAttr = id == nil ? "" : " id=\"\(id!)\""
         let innerText = textNode ?? "" 
-        return "<\(name)\(idAttr)\(classTag)>\(innerText)</\(name)>"
+        return "<\(name)\(idAttr)\(classTag)\(attrs)>\(innerText)</\(name)>"
     }
 
     public func add(className: String) {
@@ -32,6 +41,10 @@ public class HTMLTag {
 
     public func add(classNames: [String]) {
         classNames.forEach { self.add(className: $0) }
+    }
+
+    public func add(attribute: (key: String , value: String)) {
+        self.attributes.append(attribute)
     }
 
 }

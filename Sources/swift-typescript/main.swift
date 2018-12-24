@@ -1,12 +1,10 @@
 
-// head { h in
+document.headElement.scripts(src: [
+    "./app.js"
+])
+
+document.body { p in
     
-// }
-
-
-
-let _bodyElement = body { p in
-
     p.child("wrapper") { e in
 
         e.h1("Main Title" , "main-title")
@@ -17,10 +15,9 @@ let _bodyElement = body { p in
             }
         }
     }
-
 }
 
-//handleClickEvents()
+handleClickEvents()
 
 let result = document.render()
 

@@ -5,16 +5,24 @@ public class HTMLDocument {
 
     public var html: HTMLMainElement
 
-    public var head: HTMLHeadElement {
-        return self.html.head
+    public var headElement: HTMLHeadElement {
+        return self.html.headElement
     }
 
     public var title: HTMLTextNodeElement {
-        return self.head.title
+        return self.headElement.title
     }
 
-    public var body: HTMLBodyElement {
-        return self.html.body
+    public var bodyElement: HTMLBodyElement {
+        return self.html.bodyElement
+    }
+
+    public func head(completion: @escaping (HTMLHeadElement) -> Void) {
+        completion(self.headElement)
+    }
+
+    public func body(completion: @escaping (HTMLBodyElement) -> Void) {
+        completion(self.bodyElement)
     }
 
     internal static var _document: HTMLDocument! 

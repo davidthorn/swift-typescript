@@ -1,12 +1,20 @@
 public class HTMLMainElement: HTMLTag {
 
-    public var head: HTMLHeadElement
+    public var headElement: HTMLHeadElement
 
-    public var body: HTMLBodyElement
+    public var bodyElement: HTMLBodyElement
+
+    public func head(completion: @escaping (HTMLHeadElement) -> Void) {
+        completion(self.headElement)
+    }
+
+    public func body(completion: @escaping (HTMLBodyElement) -> Void) {
+        completion(self.bodyElement)
+    }
 
     public init() {
-        self.head = HTMLHeadElement()
-        self.body = HTMLBodyElement()
+        self.headElement = HTMLHeadElement()
+        self.bodyElement = HTMLBodyElement()
         super.init(name: "html", id: "html")
     }
 
@@ -14,8 +22,8 @@ public class HTMLMainElement: HTMLTag {
 
         var mutTextNode = textNode ?? ""
 
-        mutTextNode.append(self.head.render())
-        mutTextNode.append(self.body.render())
+        mutTextNode.append(self.headElement.render())
+        mutTextNode.append(self.bodyElement.render())
         
 
         let result = super.render(mutTextNode)
