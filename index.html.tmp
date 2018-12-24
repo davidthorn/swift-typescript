@@ -1,0 +1,11 @@
+<html id="html"><head id="head">
+	<script id="B7E712A2-2A10-4014-A878-3C379D767F2A" src="./app.js" type="text/javascript"></script>
+
+	<link id="9AA72FE2-29AE-438F-87A3-4220E0F021C5" href="./layout.css" rel="stylesheet"></link>
+</head><body id="body">
+	<div id="wrapper">
+	<h1 id="main-title">Hi there</h1>
+
+	<p id="DD1E07B6-3411-4E08-A582-4857913C7201">my long text which I want to use</p>
+</div>
+</body></html>

@@ -1,3 +1,4 @@
+import Foundation
 
 document.head { headElement in
     
@@ -6,10 +7,9 @@ document.head { headElement in
     ])
 
     headElement.links(href: [
-        "./layout.css"
+        "./layout.css"  
     ])
 }
-
 
 document.body { p in
     
@@ -19,14 +19,13 @@ document.body { p in
         e.p("my long text which I want to use") { pn in
             pn.click { 
                 guard let title = document.getElementById("main-title") as? HTMLH1Element else { return }
-                title.text = "Hi there you all"
+                title.text = "Hi there"
             }
         }
     }
 }
 
-handleClickEvents()
+handleClickEvents()    
 
 let result = document.render()
-
-print(result)
+_ = FileManager.default.createFile(atPath: "./index.html" , contents: result.data(using: .utf8))
