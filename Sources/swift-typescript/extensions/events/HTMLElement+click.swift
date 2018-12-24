@@ -6,9 +6,9 @@ extension HTMLElement {
             self.eventHandlers["click"] = []
         }
         let handler = (id: self.id! ,
-                                                eventName:"click" , 
-                                                target: self , 
-                                                handler: completion )
+                        eventName:"click" , 
+                        target: self , 
+                        handler: completion )
         self.eventHandlers["click"]!.append(handler)
                                             
         document.add(eventHandler:handler )

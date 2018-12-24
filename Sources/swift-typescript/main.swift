@@ -1,4 +1,8 @@
 
+// head { h in
+    
+// }
+
 
 
 let _bodyElement = body { p in
@@ -9,17 +13,15 @@ let _bodyElement = body { p in
         e.p("my long text which I want to use") { pn in
             pn.click { 
                 guard let title = document.getElementById("main-title") as? HTMLH1Element else { return }
-                title.text = "Hi there"
+                title.text = "Hi there you all"
             }
         }
     }
 
 }
 
-document.eventHandlers["click"]?.forEach { event in
-    event.handler()
-}
+//handleClickEvents()
 
-let result = _bodyElement.render()
+let result = document.render()
 
 print(result)

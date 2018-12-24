@@ -1,7 +1,13 @@
 public func body( _ n: (_ node: HTMLBodyElement ) -> Void) -> HTMLBodyElement {
-    let body_element = HTMLBodyElement()
+    let body_element = document.body
     n(body_element)
     return body_element
+}
+
+public func head( _ n: (_ node: HTMLHeadElement ) -> Void) -> HTMLHeadElement {
+    let head_element = document.head
+    n(head_element)
+    return head_element
 }
 
 public func div( _ id: String? = nil , _ n: (_ node: HTMLDivElement ) -> HTMLDivElement) -> HTMLDivElement {

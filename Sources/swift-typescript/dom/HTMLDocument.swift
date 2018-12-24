@@ -1,8 +1,27 @@
+public typealias HTMLTextNodeValueChanged = (id: String , node: HTMLTextNodeElement, from: String? , to: String?)
+
+
 public class HTMLDocument {
+
+    public var html: HTMLMainElement
+
+    public var head: HTMLHeadElement {
+        return self.html.head
+    }
+
+    public var title: HTMLTextNodeElement {
+        return self.head.title
+    }
+
+    public var body: HTMLBodyElement {
+        return self.html.body
+    }
 
     internal static var _document: HTMLDocument! 
 
     internal var eventHandlers: [String:[DOMEventHandler]]
+
+    internal var textNodeChangedEvents: [HTMLTextNodeValueChanged]
 
     public static var instance: HTMLDocument {
         get{ 
@@ -17,8 +36,10 @@ public class HTMLDocument {
     public var nodes: [HTMLElement]
 
     public init() {
+        self.html = HTMLMainElement()
         self.nodes = []
         self.eventHandlers = [:]
+        self.textNodeChangedEvents = []
     }
 
     public func add(node: HTMLElement) {
@@ -36,6 +57,15 @@ public class HTMLDocument {
             self.eventHandlers[eventHandler.eventName] = []
         }
         self.eventHandlers[eventHandler.eventName]!.append(eventHandler)
+    }
+
+    public func add(textNodeChangedEvent: HTMLTextNodeValueChanged) {
+        self.textNodeChangedEvents.append(textNodeChangedEvent)
+    }
+
+    public func render() -> String {
+        print("document should render")
+        return self.html.render()
     }
 
 }
