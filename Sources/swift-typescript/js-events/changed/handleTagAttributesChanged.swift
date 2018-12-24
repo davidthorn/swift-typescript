@@ -1,12 +1,14 @@
 import Foundation 
 
-public func handleClickEvents() {
+public func handleTagAttributesChanged() {
 
     document.eventHandlers["click"]?.forEach { event in
 
         event.handler()
 
-        let onload = document.getClickEventChanges(on: event.id)
+        let textNodeChanges = document.getTextNodeChangedEventChanges()
+        let d = "document.getElementById('\(event.id)').addEventListener('click' , () => {\n\t\(textNodeChanges)\n})"
+        let onload = "window.addEventListener('load' , () => {\n\t\(d)\n});"
 
         if let fileHandle = try? FileHandle(forWritingTo: URL(string: "./events.js")!) {
             defer {

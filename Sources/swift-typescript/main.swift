@@ -1,5 +1,7 @@
 import Foundation
 
+_ = FileManager.default.createFile(atPath: "./events.js" , contents: "".data(using: .utf8))
+
 document.head { headElement in
     
     headElement.scripts(src: [

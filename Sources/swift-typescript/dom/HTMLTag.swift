@@ -1,5 +1,7 @@
 import Foundation
 
+public typealias HTMLTagAttribute = (key: String , value: String)
+
 public class HTMLTag {
 
     public var name: String
@@ -8,7 +10,12 @@ public class HTMLTag {
 
     public var classNames: [String]
 
-    public var attributes: [(key: String , value: String)]
+    public var attributes: [HTMLTagAttribute] {
+        didSet {
+            print("attributes has been set")
+            self.attributesChanged(from: oldValue , to: attributes)
+        }
+    }
 
     public init(name: String , id: String? = nil) {
         self.name = name
