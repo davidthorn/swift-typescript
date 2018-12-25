@@ -97,7 +97,6 @@ public class HTMLDocument {
     }
 
     public func render() -> String {
-        print("document should render")
         return self.html.render()
     }
 

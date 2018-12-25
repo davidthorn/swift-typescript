@@ -25,9 +25,9 @@ document.body { p in
 
                 
 
-                guard let title = document.getElementById("main-title") as? HTMLH1Element else { return }
+                guard let title = element.with(id: "main-title") as? HTMLH1Element else { return }
                 title.text = "Hi there"
-                pn.text = "I am changed too"
+                pn.text = "I am changed too" 
                 
             }
         }

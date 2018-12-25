@@ -9,6 +9,7 @@ final class SwiftElementTests: XCTestCase {
         let tag = HTMLTag(name: "div")
         tag.add(attribute: (key: "rel" , value: "stylesheet"))
         
+        
         XCTAssertEqual(element.attributesChanged.count , 3)
     }
 
