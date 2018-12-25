@@ -1,11 +1,11 @@
 window.addEventListener('load' , () => {
-	document.getElementById('F605595B-A709-4860-9A4D-252261AC80D7').addEventListener('click' , () => {
+	document.getElementById('E603629C-5237-47F7-8C73-E6C4114A3AD4').addEventListener('click' , () => {
 	document.getElementById('main-title').innerHTML = 'Hi there';
-	document.getElementById('F605595B-A709-4860-9A4D-252261AC80D7').innerHTML = 'I am changed too';
+	document.getElementById('E603629C-5237-47F7-8C73-E6C4114A3AD4').innerHTML = 'I am changed too';
 })
 });window.addEventListener('load' , () => {
-	document.getElementById('F605595B-A709-4860-9A4D-252261AC80D7').addEventListener('click' , () => {
+	document.getElementById('E603629C-5237-47F7-8C73-E6C4114A3AD4').addEventListener('click' , () => {
 	document.getElementById('main-title').innerHTML = 'Hi there';
-	document.getElementById('F605595B-A709-4860-9A4D-252261AC80D7').innerHTML = 'I am changed too';
+	document.getElementById('E603629C-5237-47F7-8C73-E6C4114A3AD4').innerHTML = 'I am changed too';
 })
 });
