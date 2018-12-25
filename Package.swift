@@ -39,13 +39,13 @@ let package = Package(
             ]),
         .target(
             name: "SwiftElement",
-            dependencies: ["SwiftDOM"]),
+            dependencies: []),
         .testTarget(
             name: "SwiftElementTests",
             dependencies: ["SwiftElement", "SwiftDOM"]),
         .target(
             name: "SwiftDOM",
-            dependencies: []),
+            dependencies: ["SwiftElement"]),
         .testTarget(
             name: "SwiftDOMTests",
             dependencies: ["SwiftDOM"]),

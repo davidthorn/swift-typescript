@@ -1,16 +1,18 @@
 import XCTest
 @testable import SwiftElement
+import SwiftDOM
 
 final class SwiftElementTests: XCTestCase {
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(element().text, "hello")
+    func testAttributeChanged() {
+        element.attributesChanged.removeAll()
+        let tag = HTMLTag(name: "div")
+        tag.add(attribute: (key: "rel" , value: "stylesheet"))
+        
+        XCTAssertEqual(element.attributesChanged.count , 3)
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("Test that attributed changed is called", testAttributeChanged),
     ]
 }

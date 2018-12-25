@@ -1,5 +1,6 @@
 import Foundation
 import SwiftDOM
+import SwiftElement
 
 _ = FileManager.default.createFile(atPath: "./events.js" , contents: "".data(using: .utf8))
 

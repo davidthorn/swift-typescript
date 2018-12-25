@@ -1,8 +1,7 @@
 import Foundation
+import SwiftElement
 
-public typealias HTMLTagAttribute = (key: String , value: String)
-
-public class HTMLTag {
+public class HTMLTag: HTMLTagAttributeChanged {
 
     public let name: String
 
@@ -17,7 +16,7 @@ public class HTMLTag {
 
     public var attributes: [HTMLTagAttribute] {
         didSet {
-            //self.attributesChanged(from: oldValue , to: attributes)
+            self.attributesChanged(id: self.id!, from: oldValue , to: attributes)
         }
     }
 
@@ -67,6 +66,5 @@ public class HTMLTag {
     public func get(attribute key: String) -> HTMLTagAttribute? {
         return self.attributes.filter{ $0.key == key }.first
     }
-
 
 }

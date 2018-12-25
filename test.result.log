@@ -1,35 +1,4 @@
-Test Suite 'All tests' started at 2018-12-25 16:41:41.713
-Test Suite 'debug.xctest' started at 2018-12-25 16:41:41.715
-Test Suite 'SwiftElementTests' started at 2018-12-25 16:41:41.715
-Test Case 'SwiftElementTests.testExample' started at 2018-12-25 16:41:41.715
-Test Case 'SwiftElementTests.testExample' passed (0.0 seconds)
-Test Suite 'SwiftElementTests' passed at 2018-12-25 16:41:41.715
-	 Executed 1 test, with 0 failures (0 unexpected) in 0.0 (0.0) seconds
-Test Suite 'SwiftTypescriptTests' started at 2018-12-25 16:41:41.715
-Test Case 'SwiftTypescriptTests.testExample' started at 2018-12-25 16:41:41.715
-Test Case 'SwiftTypescriptTests.testExample' passed (0.0 seconds)
-Test Suite 'SwiftTypescriptTests' passed at 2018-12-25 16:41:41.715
-	 Executed 1 test, with 0 failures (0 unexpected) in 0.0 (0.0) seconds
-Test Suite 'HTMLTagTests' started at 2018-12-25 16:41:41.716
-Test Case 'HTMLTagTests.testExample' started at 2018-12-25 16:41:41.716
-Test Case 'HTMLTagTests.testExample' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test that the id attribute has been set' started at 2018-12-25 16:41:41.716
-Test Case 'HTMLTagTests.Test that the id attribute has been set' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test Amend Attribute' started at 2018-12-25 16:41:41.716
-Test Case 'HTMLTagTests.Test Amend Attribute' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node' started at 2018-12-25 16:41:41.716
-Test Case 'HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test adding an attribute and then removing it' started at 2018-12-25 16:41:41.716
-Test Case 'HTMLTagTests.Test adding an attribute and then removing it' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test that the tag can render with a class name' started at 2018-12-25 16:41:41.717
-Test Case 'HTMLTagTests.Test that the tag can render with a class name' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test that the tag can render with multiple class names' started at 2018-12-25 16:41:41.717
-Test Case 'HTMLTagTests.Test that the tag can render with multiple class names' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test add Class Name does not allow duplicated' started at 2018-12-25 16:41:41.717
-Test Case 'HTMLTagTests.Test add Class Name does not allow duplicated' passed (0.0 seconds)
-Test Suite 'HTMLTagTests' passed at 2018-12-25 16:41:41.718
-	 Executed 8 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
-Test Suite 'debug.xctest' passed at 2018-12-25 16:41:41.718
-	 Executed 10 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
-Test Suite 'All tests' passed at 2018-12-25 16:41:41.718
-	 Executed 10 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Compile Swift Module 'SwiftElement' (1 sources)
+/home/david/swift-typescript/Sources/SwiftElement/element.swift:15:34: error: value of type '[HTMLTagAttribute]?' (aka 'Optional<Array<(key: String, value: String)>>') has no member 'append'
+        element.attributesChanged[id].append(contentsOf: to)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~ ~~~~~~

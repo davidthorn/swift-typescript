@@ -1,3 +1,5 @@
+import SwiftElement
+
 public typealias HTMLTextNodeValueChanged = (id: String , node: HTMLTextNodeElement, from: String? , to: String?)
 public typealias HTMLTagAttributesChanged = (id: String , node: HTMLTag, from: [HTMLTagAttribute] , to: [HTMLTagAttribute])
 
@@ -13,7 +15,7 @@ public class HTMLDocument {
     public var title: HTMLTextNodeElement {
         return self.headElement.title
     }
-
+ 
     public var bodyElement: HTMLBodyElement {
         return self.html.bodyElement
     }
