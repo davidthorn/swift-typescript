@@ -14,6 +14,20 @@ public class HTMLElement: HTMLTag {
 
     internal var eventHandlers: [String:[DOMEventHandler]]
 
+    public func getEventHandlers() -> [String:[DOMEventHandler]] {
+        return self.eventHandlers
+    }
+
+    public func addEventHandler(handler: DOMEventHandler ) {
+        if self.eventHandlers[handler.eventName] == nil {
+            self.eventHandlers[handler.eventName] = []
+        }
+        
+        self.eventHandlers[handler.eventName]!.append(handler)
+                                            
+        document.add(eventHandler:handler)
+    }
+
     public override init(name: String , id: String? = nil) {
         self.nodes = []
         self.eventHandlers = [:]

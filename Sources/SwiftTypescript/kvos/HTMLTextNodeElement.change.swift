@@ -1,3 +1,5 @@
+import SwiftDOM
+
 extension HTMLTextNodeElement {
 
     public func changeEvent(from: String? , to: String?) {

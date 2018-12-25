@@ -1,3 +1,5 @@
+import SwiftDOM
+
 extension HTMLTag {
 
     public func attributesChanged(from: [HTMLTagAttribute] , to: [HTMLTagAttribute]) {

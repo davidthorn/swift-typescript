@@ -1,9 +1,11 @@
+import SwiftDOM
+
 extension  HTMLDocument {
 
     public func getTextNodeChangedEventChanges() -> String {
         var t: [String] = []
 
-        self.textNodeChangedEvents.forEach { change in
+        self.getTextNodeChangedEvents().forEach { change in
             t.append("document.getElementById('\(change.id)').innerHTML = '\(change.to ?? "")';")
         }
 

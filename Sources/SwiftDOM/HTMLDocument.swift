@@ -33,6 +33,22 @@ public class HTMLDocument {
     internal var textNodeChangedEvents: [HTMLTextNodeValueChanged]
     internal var tagAttributesChangedEvents: [HTMLTagAttributesChanged]
 
+    public func getTagAttributesChangedEvents() -> [HTMLTagAttributesChanged] {
+        return self.tagAttributesChangedEvents
+    }
+
+    public func getTextNodeChangedEvents() -> [HTMLTextNodeValueChanged] {
+        return self.textNodeChangedEvents
+    }
+
+    public func removeAllTextNodeChangedEvents() {
+        self.textNodeChangedEvents.removeAll()
+    }
+
+    public func getEventHandlers() -> [String:[DOMEventHandler]] {
+        return self.eventHandlers
+    }
+
     public static var instance: HTMLDocument {
         get{ 
             guard let doc = self._document else { 

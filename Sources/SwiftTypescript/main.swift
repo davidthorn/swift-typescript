@@ -1,4 +1,5 @@
 import Foundation
+import SwiftDOM
 
 _ = FileManager.default.createFile(atPath: "./events.js" , contents: "".data(using: .utf8))
 
@@ -38,3 +39,4 @@ handleTagAttributesChanged()
 let result = document.render()
 
 _ = FileManager.default.createFile(atPath: "./index.html" , contents: prerender.data(using: .utf8))
+print("we are here")

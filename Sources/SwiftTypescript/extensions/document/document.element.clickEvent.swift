@@ -1,3 +1,5 @@
+import SwiftDOM
+
 extension  HTMLDocument {
 
     public func getClickEventChanges(on id: String) -> String {

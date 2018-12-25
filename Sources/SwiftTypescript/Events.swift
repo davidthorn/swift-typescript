@@ -1,4 +1,5 @@
 import Foundation
+import SwiftDOM
 
 public class element {
 
@@ -9,7 +10,7 @@ public class element {
         public static func click(on id: String) {
             let onload = document.getClickEventChanges(on: id)
             element.write(data: onload.data(using: .utf8)!)
-            document.textNodeChangedEvents.removeAll()
+            document.removeAllTextNodeChangedEvents()
         }
 
     }
