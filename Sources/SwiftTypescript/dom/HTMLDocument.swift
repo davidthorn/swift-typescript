@@ -1,5 +1,5 @@
 public typealias HTMLTextNodeValueChanged = (id: String , node: HTMLTextNodeElement, from: String? , to: String?)
-public typealias HTMLTagAttributesChanged = (id: String , node: HTMLTextNodeElement, from: [HTMLTagAttribute] , to: [HTMLTagAttribute])
+public typealias HTMLTagAttributesChanged = (id: String , node: HTMLTag, from: [HTMLTagAttribute] , to: [HTMLTagAttribute])
 
 
 public class HTMLDocument {

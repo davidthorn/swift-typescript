@@ -1,7 +1,9 @@
 import XCTest
 
-import swift_typescriptTests
+import SwiftElementTests
+import SwiftTypescriptTests
 
 var tests = [XCTestCaseEntry]()
-tests += swift_typescriptTests.allTests()
+tests += SwiftElementTests.allTests()
+tests += SwiftTypescriptTests.allTests()
 XCTMain(tests)

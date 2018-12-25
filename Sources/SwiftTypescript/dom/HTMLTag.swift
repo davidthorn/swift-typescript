@@ -12,7 +12,6 @@ public class HTMLTag {
 
     public var attributes: [HTMLTagAttribute] {
         didSet {
-            print("attributes has been set")
             self.attributesChanged(from: oldValue , to: attributes)
         }
     }

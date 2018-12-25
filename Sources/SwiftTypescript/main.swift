@@ -20,6 +20,9 @@ document.body { p in
         e.h1("Main Title" , "main-title")
         e.p("my long text which I want to use") { pn in
             pn.click { 
+
+                
+
                 guard let title = document.getElementById("main-title") as? HTMLH1Element else { return }
                 title.text = "Hi there"
                 pn.text = "I am changed too"
@@ -31,6 +34,7 @@ document.body { p in
 
 let prerender = document.render()
 handleClickEvents() 
+handleTagAttributesChanged()
 let result = document.render()
 
 _ = FileManager.default.createFile(atPath: "./index.html" , contents: prerender.data(using: .utf8))
