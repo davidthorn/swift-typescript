@@ -1,44 +1,35 @@
-nodemon --exec "swift test" -e "swift"
-[33m[nodemon] 1.18.6[39m
-[33m[nodemon] to restart at any time, enter `rs`[39m
-[33m[nodemon] watching: *.*[39m
-[32m[nodemon] starting `swift test`[39m
-Compile Swift Module 'SwiftDOM' (13 sources)
-Compile Swift Module 'SwiftElement' (1 sources)
-Compile Swift Module 'SwiftDOMTests' (3 sources)
-Compile Swift Module 'SwiftTypescript' (9 sources)
-Compile Swift Module 'SwiftElementTests' (2 sources)
-Compile Swift Module 'SwiftTypescriptTests' (2 sources)
-Linking ./.build/x86_64-unknown-linux/debug/SwiftTypescript
-Compile Swift Module 'swift_typescriptPackageTests' (1 sources)
-Linking ./.build/x86_64-unknown-linux/debug/swift-typescriptPackageTests.xctest
-Test Suite 'All tests' started at 2018-12-25 14:48:43.445
-Test Suite 'debug.xctest' started at 2018-12-25 14:48:43.446
-Test Suite 'HTMLTagTests' started at 2018-12-25 14:48:43.446
-Test Case 'HTMLTagTests.testExample' started at 2018-12-25 14:48:43.446
+Test Suite 'All tests' started at 2018-12-25 16:41:41.713
+Test Suite 'debug.xctest' started at 2018-12-25 16:41:41.715
+Test Suite 'SwiftElementTests' started at 2018-12-25 16:41:41.715
+Test Case 'SwiftElementTests.testExample' started at 2018-12-25 16:41:41.715
+Test Case 'SwiftElementTests.testExample' passed (0.0 seconds)
+Test Suite 'SwiftElementTests' passed at 2018-12-25 16:41:41.715
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.0 (0.0) seconds
+Test Suite 'SwiftTypescriptTests' started at 2018-12-25 16:41:41.715
+Test Case 'SwiftTypescriptTests.testExample' started at 2018-12-25 16:41:41.715
+Test Case 'SwiftTypescriptTests.testExample' passed (0.0 seconds)
+Test Suite 'SwiftTypescriptTests' passed at 2018-12-25 16:41:41.715
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.0 (0.0) seconds
+Test Suite 'HTMLTagTests' started at 2018-12-25 16:41:41.716
+Test Case 'HTMLTagTests.testExample' started at 2018-12-25 16:41:41.716
 Test Case 'HTMLTagTests.testExample' passed (0.0 seconds)
-Test Case 'HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node' started at 2018-12-25 14:48:43.446
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:26: error: HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node : XCTAssertEqual failed: ("<div id="123" id="123"></div>") is not equal to ("<div id="123"></div>") - 
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:29: error: HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node : XCTAssertEqual failed: ("<div id="DA1955A3-F02F-4E64-AA33-52B8D9A98B4C" id="DA1955A3-F02F-4E64-AA33-52B8D9A98B4C"></div>") is not equal to ("<div id="DA1955A3-F02F-4E64-AA33-52B8D9A98B4C"></div>") - 
-Test Case 'HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node' failed (0.0 seconds)
-Test Case 'HTMLTagTests.Test adding an attribute and then removing it' started at 2018-12-25 14:48:43.447
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:35: error: HTMLTagTests.Test adding an attribute and then removing it : XCTAssertEqual failed: ("2") is not equal to ("1") - Attributes should have 1 attribute now
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:37: error: HTMLTagTests.Test adding an attribute and then removing it : XCTAssertEqual failed: ("1") is not equal to ("0") - Attributes should have 0 attribute now
-Test Case 'HTMLTagTests.Test adding an attribute and then removing it' failed (0.0 seconds)
-Test Case 'HTMLTagTests.Test that the tag can render with a class name' started at 2018-12-25 14:48:43.447
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:46: error: HTMLTagTests.Test that the tag can render with a class name : XCTAssertEqual failed: ("<div id="123" id="123" class="box"></div>") is not equal to ("<div id="123" class="box"></div>") - 
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:49: error: HTMLTagTests.Test that the tag can render with a class name : XCTAssertEqual failed: ("<div id="F073F9E9-DA79-4EA7-A727-2A83F0EF4AAC" id="F073F9E9-DA79-4EA7-A727-2A83F0EF4AAC" class="box"></div>") is not equal to ("<div id="F073F9E9-DA79-4EA7-A727-2A83F0EF4AAC" class="box"></div>") - 
-Test Case 'HTMLTagTests.Test that the tag can render with a class name' failed (0.0 seconds)
-Test Case 'HTMLTagTests.Test that the tag can render with multiple class names' started at 2018-12-25 14:48:43.447
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:60: error: HTMLTagTests.Test that the tag can render with multiple class names : XCTAssertEqual failed: ("<div id="123" id="123" class="box box1"></div>") is not equal to ("<div id="123" class="box box1"></div>") - 
-/home/david/swift-typescript/Tests/SwiftDOMTests/HTMLTagTests.swift:63: error: HTMLTagTests.Test that the tag can render with multiple class names : XCTAssertEqual failed: ("<div id="857BEF0F-7475-4C18-B59F-34CDE65EF4AB" id="857BEF0F-7475-4C18-B59F-34CDE65EF4AB" class="box box1"></div>") is not equal to ("<div id="857BEF0F-7475-4C18-B59F-34CDE65EF4AB" class="box box1"></div>") - 
-Test Case 'HTMLTagTests.Test that the tag can render with multiple class names' failed (0.0 seconds)
-Test Case 'HTMLTagTests.Test add Class Name does not allow duplicated' started at 2018-12-25 14:48:43.447
+Test Case 'HTMLTagTests.Test that the id attribute has been set' started at 2018-12-25 16:41:41.716
+Test Case 'HTMLTagTests.Test that the id attribute has been set' passed (0.0 seconds)
+Test Case 'HTMLTagTests.Test Amend Attribute' started at 2018-12-25 16:41:41.716
+Test Case 'HTMLTagTests.Test Amend Attribute' passed (0.0 seconds)
+Test Case 'HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node' started at 2018-12-25 16:41:41.716
+Test Case 'HTMLTagTests.Test that the tag can render a basic tag without any attributes or text node' passed (0.0 seconds)
+Test Case 'HTMLTagTests.Test adding an attribute and then removing it' started at 2018-12-25 16:41:41.716
+Test Case 'HTMLTagTests.Test adding an attribute and then removing it' passed (0.0 seconds)
+Test Case 'HTMLTagTests.Test that the tag can render with a class name' started at 2018-12-25 16:41:41.717
+Test Case 'HTMLTagTests.Test that the tag can render with a class name' passed (0.0 seconds)
+Test Case 'HTMLTagTests.Test that the tag can render with multiple class names' started at 2018-12-25 16:41:41.717
+Test Case 'HTMLTagTests.Test that the tag can render with multiple class names' passed (0.0 seconds)
+Test Case 'HTMLTagTests.Test add Class Name does not allow duplicated' started at 2018-12-25 16:41:41.717
 Test Case 'HTMLTagTests.Test add Class Name does not allow duplicated' passed (0.0 seconds)
-Test Suite 'HTMLTagTests' failed at 2018-12-25 14:48:43.447
-	 Executed 6 tests, with 8 failures (0 unexpected) in 0.001 (0.001) seconds
-Test Suite 'debug.xctest' failed at 2018-12-25 14:48:43.448
-	 Executed 6 tests, with 8 failures (0 unexpected) in 0.001 (0.001) seconds
-Test Suite 'All tests' failed at 2018-12-25 14:48:43.448
-	 Executed 6 tests, with 8 failures (0 unexpected) in 0.001 (0.001) seconds
-[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+Test Suite 'HTMLTagTests' passed at 2018-12-25 16:41:41.718
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'debug.xctest' passed at 2018-12-25 16:41:41.718
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'All tests' passed at 2018-12-25 16:41:41.718
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds

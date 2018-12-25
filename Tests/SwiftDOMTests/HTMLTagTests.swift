@@ -23,7 +23,7 @@ final class HTMLTagTests: XCTestCase {
 
     func testRenderBasicTag() {
         let data = tag.render()
-        XCTAssertEqual(data , "<div id=\"123\"></div>")
+        XCTAssertEqual(data , "<div id=\"123\"></div>" , "The tags id should be 123 and not \(tag.id!)")
 
         let uiddata = tagWithUUID.render()
         XCTAssertEqual(uiddata , "<div id=\"\(tagWithUUID.id!)\"></div>")
