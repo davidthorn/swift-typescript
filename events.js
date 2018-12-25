@@ -1,6 +1,6 @@
 window.addEventListener('load' , () => {
-	document.getElementById('D9921CA2-5040-462E-874F-72412C5FDA5F').addEventListener('click' , () => {
+	document.getElementById('FD6D55B0-F77A-4C75-8B89-0C65A5F19557').addEventListener('click' , () => {
 	document.getElementById('main-title').innerHTML = 'Hi there';
-	document.getElementById('D9921CA2-5040-462E-874F-72412C5FDA5F').innerHTML = 'I am changed too';
+	document.getElementById('FD6D55B0-F77A-4C75-8B89-0C65A5F19557').innerHTML = 'I am changed too';
 })
 });

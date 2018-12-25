@@ -10,6 +10,12 @@ let package = Package(
         .library(
             name: "SwiftTypescript",
             targets: ["SwiftTypescript"]),
+        .library(
+            name: "SwiftElement",
+            targets: ["SwiftElement"]),
+        .library(
+            name: "SwiftDOM",
+            targets: ["SwiftDOM"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,12 +29,18 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "SwiftTypescriptTests",
-            dependencies: ["SwiftTypescript"]),
+            dependencies: ["SwiftTypescript", "SwiftElement"]),
         .target(
             name: "SwiftElement",
             dependencies: []),
         .testTarget(
             name: "SwiftElementTests",
             dependencies: ["SwiftElement"]),
+        .target(
+            name: "SwiftDOM",
+            dependencies: []),
+        .testTarget(
+            name: "SwiftDOMTests",
+            dependencies: ["SwiftDOM"]),
     ]
 )
