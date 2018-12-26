@@ -1,4 +1,0 @@
-Compile Swift Module 'SwiftElement' (1 sources)
-/home/david/swift-typescript/Sources/SwiftElement/element.swift:15:34: error: value of type '[HTMLTagAttribute]?' (aka 'Optional<Array<(key: String, value: String)>>') has no member 'append'
-        element.attributesChanged[id].append(contentsOf: to)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~ ~~~~~~

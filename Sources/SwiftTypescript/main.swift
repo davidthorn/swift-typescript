@@ -17,10 +17,10 @@ document.head { headElement in
 
 document.body { p in
     
-    p.child("wrapper") { e in
+    p.child("wrapper") { wrapper in
 
-        e.h1("Main Title" , "main-title")
-        e.p("my long text which I want to use") { pn in
+        wrapper.h1("Main Title" , "main-title")
+        wrapper.p("my long text which I want to use") { pn in
             pn.click { 
 
                 
